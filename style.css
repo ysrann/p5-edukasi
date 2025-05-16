@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+body {
+  background: #e0f7fa;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+#game-container {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+#board {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 3px solid #00796b;
+  background: #b2dfdb;
+  position: relative;
+  box-shadow: 0 0 10px #004d40;
+}
+
+.cell {
+  border: 1px solid #004d40;
+  position: relative;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2px;
+  cursor: default;
+}
+
+.cell span.number {
+  font-weight: bold;
+  color: #004d40;
+}
+
+.cell.normal {
+  background: #b2dfdb;
+}
+
+.cell.ladder {
+  background: #aed581;
+}
+
+.cell.snake {
+  background: #ef9a9a;
+}
+
+.cell.question {
+  background: #fff59d;
+}
+
+.pawn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  transition: top 0.4s ease, left 0.4s ease;
+  border: 2px solid #333;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+#pawn1 {
+  background: #e53935; /* merah */
+  border-color: #b71c1c;
+}
+
+#pawn2 {
+  background: #fdd835; /* kuning */
+  border-color: #fbc02d;
+}
+
+#info-panel {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#dice-result {
+  font-size: 48px;
+  font-weight: 900;
+  color: #00796b;
+  height: 60px;
+  text-align: center;
+  user-select: none;
+}
+
+#roll-dice-btn {
+  padding: 12px;
+  background: #00796b;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+#roll-dice-btn:hover:not(:disabled) {
+  background: #004d40;
+}
+
+#roll-dice-btn:disabled {
+  background: #b2dfdb;
+  cursor: default;
+}
+
+#turn-info {
+  font-size: 18px;
+  font-weight: 700;
+  color: #004d40;
+  user-select: none;
+}
+
+#question-container {
+  background: #fff;
+  border: 2px solid #00796b;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#question-text {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#answers button {
+  margin: 5px 0;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #00796b;
+  background: #e0f2f1;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#answers button:hover {
+  background: #b2dfdb;
+}
+
+#timer {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #d32f2f;
+  user-select: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#winner {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  color: #2e7d32;
+  user-select: none;
+  margin-top: 20px;
+}
